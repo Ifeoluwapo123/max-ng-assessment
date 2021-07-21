@@ -22,8 +22,8 @@ CommentController.makeCommment = async function (req: Request, res: Response) {
     };
 
     CommentModel.makeComment(data, function (err: any, data: any) {
-      if (err) res.status(500).json({ error: "server error" });
-      else res.status(200).json({message: "successfully made a comment"});
+      if (err) res.status(500).json({ error: err });
+      else res.status(200).json({ message: "successfully made a comment" });
     });
   } catch (error) {
     console.log(error);

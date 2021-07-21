@@ -33,7 +33,7 @@ CommentController.makeCommment = function (req, res) {
             const data = Object.assign(Object.assign({}, req.body), { ip_address: `${ip}, ${city} ${country_name}` });
             comment_model_1.CommentModel.makeComment(data, function (err, data) {
                 if (err)
-                    res.status(500).json({ error: "server error" });
+                    res.status(500).json({ error: err });
                 else
                     res.status(200).json({ message: "successfully made a comment" });
             });
