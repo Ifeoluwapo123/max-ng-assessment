@@ -22,14 +22,4 @@ export default {
       console.log(error);
     }
   },
-  getA: () => { 
-    try {
-      return apiAxiosCalls({
-        url: "https://ipapi.co/json/",
-        method: "GET",
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  }
 };

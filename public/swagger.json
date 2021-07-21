@@ -1,416 +1,137 @@
 {
-  "openapi": "3.0.3",
+  "swagger": "2.0",
   "info": {
-    "title": "Star Wars Movies",
-    "description": "Star Wars Movie  api documentation",
-    "version": "0.0.1"
+    "version": "1.0",
+    "title": "Star War Movies",
+    "description": "Star War api documentation"
   },
   "paths": {
-    "api/movies": {
+    "/api/comments/movies": {
       "get": {
-        "description": "List all star movies",
+        "tags": ["Get comments on all movies"],
+        "operationId": "Get",
+        "consumes": [],
+        "produces": ["application/json"],
+        "parameters": [],
         "responses": {
           "200": {
-            "description": "Successfully fetched all movies",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "title": "string"
-                    },
-                    "episode_id": {
-                      "type": "number"
-                    },
-                    "opening_crawl": {
-                      "type": "string"
-                    },
-                    "director": {
-                      "type": "string"
-                    },
-                    "producer": {
-                      "type": "string"
-                    },
-                    "release_date": {
-                      "type": "string"
-                    },
-                    "created": {
-                      "type": "string"
-                    },
-                    "edited": {
-                      "type": "string"
-                    }
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
                   },
-                  "example": {
-                    "title": 1,
-                    "episode_id": 1,
-                    "opening_crawl": "The Republic is crumbling\r\nunder attacks by the ruthless\r\nSith Lord, Count Dooku.\r\nThere are heroes on both sides....",
-                    "director": "George Lucas",
-                    "producer": "Rick McCallum",
-                    "release_date": "2005-05-19",
-                    "created": "2014-12-20T20:47:52.073000Z",
-                    "edited": "2014-12-20T20:47:52.073000Z"
+                  "movie_id": {
+                    "type": "number"
+                  },
+                  "comments": {
+                    "type": "string"
+                  },
+                  "ip_address": {
+                    "type": "string"
+                  },
+                  "created_at": {
+                    "type": "string"
                   }
+                },
+                "example": {
+                  "id": 1,
+                  "movie_id": 1,
+                  "comments": "Awesome movie!!!",
+                  "ip_address": "102.89.3.69, Lagos Nigeria",
+                  "created_at": "2021-07-21T03:44:31.000Z"
                 }
               }
             }
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "404": {
-            "description": "Not Found"
           }
         }
       }
     },
-    "api/movies/{id}": {
-      "get": {
-        "description": "get a single star movie",
-        "responses": {
-          "200": {
-            "description": "Successfully fetched a star movie",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "title": {
-                      "type": "string"
-                    },
-                    "episode_id": {
-                      "type": "number"
-                    },
-                    "opening_crawl": {
-                      "type": "string"
-                    },
-                    "director": {
-                      "type": "string"
-                    },
-                    "producer": {
-                      "type": "string"
-                    },
-                    "release_date": {
-                      "type": "string"
-                    },
-                    "created": {
-                      "type": "string"
-                    },
-                    "edited": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        }
-      }
-    },
-    "api/comments/movies": {
-      "get": {
-        "description": "List comments on all star movies",
-        "responses": {
-          "200": {
-            "description": "Successfully fetched all comments on movies",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "id": {
-                        "type": "number"
-                      },
-                      "movie_id": {
-                        "type": "number"
-                      },
-                      "comments": {
-                        "type": "string"
-                      },
-                      "ip_address": {
-                        "type": "string"
-                      },
-                      "created_at": {
-                        "type": "string"
-                      }
-                    },
-                    "example": {
-                      "id": 1,
-                      "movie_id": 1,
-                      "comments": "Awesome movie!!!",
-                      "ip_address": "102.89.3.69, Lagos Nigeria",
-                      "created_at": "2021-07-21T03:44:31.000Z"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        }
-      }
-    },
-    "api/comments/movies/{id}": {
-      "get": {
-        "description": "List all comments on a star particular movies",
-        "responses": {
-          "200": {
-            "description": "Successfully fetched all comments on a  particular movie",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "properties": {
-                      "id": {
-                        "type": "number"
-                      },
-                      "movie_id": {
-                        "type": "number"
-                      },
-                      "comments": {
-                        "type": "string"
-                      },
-                      "ip_address": {
-                        "type": "string"
-                      },
-                      "created_at": {
-                        "type": "string"
-                      }
-                    },
-                    "example": {
-                      "id": 1,
-                      "movie_id": 1,
-                      "comments": "Awesome movie!!!",
-                      "ip_address": "102.89.3.69, Lagos Nigeria",
-                      "created_at": "2021-07-21T03:44:31.000Z"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        }
-      }
-    },
-    "api/comments/movies/create/": {
+    "/api/comments/movies/create": {
       "post": {
-        "description": "comment on a movie",
+        "tags": ["Create comment"],
+        "operationId": "Post",
+        "consumes": ["application/json"],
+        "produces": [],
+        "parameters": [
+          {
+            "name": "value",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "movie_id": {
+                  "type": "number"
+                },
+                "comments": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Success" },
+          "400": { "description": "Bad Request" },
+          "404": { "description": "Resource Not Found" }
+        }
+      }
+    },
+    "/api/comments/movies/:id": {
+      "get": {
+        "tags": ["Get comments on a unique movie"],
+        "operationId": "Get",
+        "consumes": [],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "value",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "responses": {
           "200": {
-            "description": "Successfully fetched all comments on a  particular movie",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "movie_id": {
-                      "type": "number"
-                    },
-                    "comments": {
-                      "type": "string"
-                    }
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
                   },
-                  "example": {
-                    "movie_id": 2,
-                    "comments": "wonderful playground"
+                  "movie_id": {
+                    "type": "number"
+                  },
+                  "comments": {
+                    "type": "string"
+                  },
+                  "ip_address": {
+                    "type": "string"
+                  },
+                  "created_at": {
+                    "type": "string"
                   }
+                },
+                "example": {
+                  "id": 1,
+                  "movie_id": 1,
+                  "comments": "Awesome movie!!!",
+                  "ip_address": "102.89.3.69, Lagos Nigeria",
+                  "created_at": "2021-07-21T03:44:31.000Z"
                 }
               }
             }
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "404": {
-            "description": "Not Found"
           }
         }
       }
     },
-    "api/characters/movies/{id}": {
-      "get": {
-        "description": "List all characters on a star particular movies",
-        "responses": {
-          "200": {
-            "description": "Successfully fetched all characters of a particular movie",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "types": "object",
-                    "properties": {
-                      "characters": {
-                        "type": "array"
-                      }
-                    },
-                    "example": {
-                      "characters": [
-                        "https://swapi.dev/api/people/2/",
-                        "https://swapi.dev/api/people/3/",
-                        "https://swapi.dev/api/people/6/",
-                        "https://swapi.dev/api/people/7/",
-                        "https://swapi.dev/api/people/10/"
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        }
-      }
-    },
-    "api/vehicles/movies/{id}": {
-      "get": {
-        "description": "List all vehicles on a star particular movies",
-        "responses": {
-          "200": {
-            "description": "Successfully fetched all vehicles of a particular movie",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "types": "object",
-                    "properties": {
-                      "vehicles": {
-                        "type": "array"
-                      }
-                    },
-                    "example": {
-                      "vehicles": [
-                        "https://swapi.dev/api/vehicles/4/",
-                        "https://swapi.dev/api/vehicles/44/",
-                        "https://swapi.dev/api/vehicles/45/",
-                        "https://swapi.dev/api/vehicles/46/",
-                        "https://swapi.dev/api/vehicles/50/",
-                        "https://swapi.dev/api/vehicles/51/"
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        }
-      }
-    },
-    "api/starships/movies/{id}": {
-      "get": {
-        "description": "List all starships on a star particular movies",
-        "responses": {
-          "200": {
-            "description": "Successfully fetched all starships of a particular movie",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "types": "object",
-                    "properties": {
-                      "starships": {
-                        "type": "array"
-                      }
-                    },
-                    "example": {
-                      "starships": [
-                        "https://swapi.dev/api/vehicles/4/",
-                        "https://swapi.dev/api/vehicles/44/",
-                        "https://swapi.dev/api/vehicles/45/",
-                        "https://swapi.dev/api/vehicles/46/",
-                        "https://swapi.dev/api/vehicles/50/",
-                        "https://swapi.dev/api/vehicles/51/"
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        }
-      }
-    },
-    "api/planets/movies/{id}": {
-      "get": {
-        "description": "List all planets on a star particular movies",
-        "responses": {
-          "200": {
-            "description": "Successfully fetched all planets of a particular movie",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "types": "object",
-                    "properties": {
-                      "planets": {
-                        "type": "array"
-                      }
-                    },
-                    "example": {
-                      "planeets": [
-                        "https://swapi.dev/api/vehicles/4/",
-                        "https://swapi.dev/api/vehicles/44/",
-                        "https://swapi.dev/api/vehicles/45/",
-                        "https://swapi.dev/api/vehicles/46/",
-                        "https://swapi.dev/api/vehicles/50/",
-                        "https://swapi.dev/api/vehicles/51/"
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        }
-      }
-    }
+    "definitions": {}
   }
 }

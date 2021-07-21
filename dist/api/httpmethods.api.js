@@ -26,7 +26,6 @@ const apiAxiosCalls = (params) => __awaiter(void 0, void 0, void 0, function* ()
         case HttpMethods_1.httpMethods.POST:
             return {};
         default:
-            console.log("cool");
             return {};
     }
 });

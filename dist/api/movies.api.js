@@ -37,15 +37,4 @@ exports.default = {
             console.log(error);
         }
     },
-    getA: () => {
-        try {
-            return httpmethods_api_1.default({
-                url: "https://ipapi.co/json/",
-                method: "GET",
-            });
-        }
-        catch (error) {
-            console.log(error);
-        }
-    }
 };

@@ -16,7 +16,6 @@ const apiAxiosCalls = async (params: ApiProps) => {
     case httpMethods.POST:
       return {};
     default:
-      console.log("cool");
       return {};
   }
 };
